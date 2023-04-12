@@ -1,6 +1,6 @@
 # Replace all the text inside a yml file of a directory
 sed -i 's/<replaceme>/<withthisonehere>/g' *.yml
 
-# Replace second line with the date on a Dockerfile
-sed -i "2s/.*/# $(date)/" Dockerfile
+# Replace x(int) line with the date on a Dockerfile
+sed -i "xs/.*/# $(date)/" Dockerfile
 
