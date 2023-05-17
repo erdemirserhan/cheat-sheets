@@ -8,4 +8,4 @@
 ./bin/kafka-topics.sh \
     --bootstrap-server <bootstrap_server>:9092 \
     --delete \
-    --topic 'your_topic_name-*.'
+    --topic 'your_topic_name-.*'
