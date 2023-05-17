@@ -8,4 +8,4 @@
 cd /opt/jboss/standalone/configuration
 
 # Debug standalone.xml and all the other config files
-/opt/jboss/wildfly/standalone/configuration
+cd /opt/jboss/wildfly/standalone/configuration
