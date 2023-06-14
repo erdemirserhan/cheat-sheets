@@ -24,4 +24,4 @@ psql -U <user_name> -d <db_name> -a -c "set schema '<yourschemaname>';" -h <db_e
 
 # Take dump from a remote postgresql-db
 PGPASSWORD=<your_remote_db_pass_here> pg_dump -h <your_db_adress_here> -p 5432 -U <your_user_name_here> <your_db_name_here> <some_dump_name>.dump
-PGPASSWORD=<your_remote_db_pass_here> psql -h <your_db_adress_here> -p 5432 -U <your_user_name_here> -d <your_db_name_here> <some_dump_name>.dump
+PGPASSWORD=<your_remote_db_pass_here> psql -h <your_db_adress_here> -p 5432 -U <your_user_name_here> -d <your_db_name_here> < <some_dump_name>.dump
