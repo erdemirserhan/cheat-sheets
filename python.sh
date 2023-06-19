@@ -9,3 +9,9 @@ python -m pip install pre-commit
 pre-commit sample-config > .pre-commit-config.yaml
 pre-commit install
 pre-commit run --all-files
+
+
+# In Linux
+
+virtualenv --python python3.<python_version_here> venv
+source venv/bin/activate
