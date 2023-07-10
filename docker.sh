@@ -10,5 +10,5 @@ docker exec -i -t /bin/bash
 # clean up and delete all unused container images
 docker image prune -a
 
-# only clean up container images that have been created over 24 hours ago
-docker image prune -a --filter "=24h"
+# only clean up container images that have been created over 3 months ago
+docker image prune -a --filter "=2160h"
