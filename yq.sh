@@ -1,2 +1,2 @@
 # Read stuff from xml file
-yq -p xml '.metadata.versioning.snapshotVersions.snapshotVersion.value' test.xml
+yq -p xml '.metadata.value1.value2' test.xml
