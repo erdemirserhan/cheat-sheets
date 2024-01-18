@@ -35,3 +35,7 @@ SELECT pg_terminate_backend(pg_stat_activity.pid)
    WHERE pg_stat_activity.datname = '<db_name_here>'
    AND pid <> pg_backend_pid();
    DROP DATABASE <db_name_here>;
+
+
+# Delete data from a table
+DELETE FROM <table_name> WHERE <some_integer_coloumn> > <some_number>;
