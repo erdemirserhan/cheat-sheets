@@ -16,6 +16,7 @@ END$$;
 # Grant all rights to the user in a certain PostgreSQL-Database
 grant all privileges on database <database_name> to <user_name>;
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA <schema_name> TO <user_name>;
+GRANT ALL ON SCHEMA <schema_name> TO <user_name>;
 
 # Change owner of the Database
 ALTER DATABASE db_name OWNER TO new_owner_name;
