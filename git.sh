@@ -9,3 +9,6 @@ git restore <file_name_here>
 
 # Enable GPG-Signing
 git config --global commit.gpgsign true
+
+# Abort merging
+git merge --abort
