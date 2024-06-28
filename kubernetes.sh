@@ -6,3 +6,5 @@ kubectl cp <namespace>/<pod_full_name>:/path/to/your/files/myfile.xml myfile.xml
 kubectl cp myfile.xml <namespace>/<pod_full_name>:/path/to/your/files/myfile.xml 
 # Delete every deployment with a name containt <word>
 kubectl get deployments -n=<your_namespace> | grep '<word>' | awk '{print $1}' | xargs kubectl delete deployment -n=<your_namespace>
+# Fire up a Pod to debug stuff
+kubectl run -i --tty --rm debug --image=ubuntu --restart=Never -- bash
