@@ -7,7 +7,7 @@
 # Restart/reload server config on jboss via cli with tls (9993 is tls for management url)
 /opt/jboss/bin/jboss-cli.sh --connect --controller=remote+https://localhost:9993 -c ":shutdown(restart=true)"
 
-# Debug standalone.xml and all the other config files
+# Debug standalone.xml and all the other config files #
 cd /opt/jboss/standalone/configuration
 
 # Debug standalone.xml and all the other config files
