@@ -4,8 +4,10 @@ kubectl cp <namespace>/<pod_full_name>:/path/to/your/files/myfile.xml myfile.xml
 
 # Copy a file from your local Machine to a Kubernetes-Pod
 kubectl cp myfile.xml <namespace>/<pod_full_name>:/path/to/your/files/myfile.xml
+
 # Delete every deployment with a name containt <word>
 kubectl get deployments -n=<your_namespace> | grep '<word>' | awk '{print $1}' | xargs kubectl delete deployment -n=<your_namespace>
+
 # Fire up a Pod to debug stuff
 kubectl run -i --tty --rm debug --image=ubuntu --restart=Never -- bash
 
@@ -29,3 +31,25 @@ kubectl create -f nginx-deployment.yaml
 # OR
 # In k8s version 1.19+, we can specify the --replicas option to create a deployment with 4 replicas.
 kubectl create deployment --image=nginx nginx --replicas=4 --dry-run=client -o yaml > nginx-deployment.yaml
+
+# Taint nodes with key:value
+kubectl tains nodes node-name key=value:taint-effect(NoSchedule | PreferNoSchedule | NoExecute) (Not scheduled | not scheduled, but not guarenteed| Pods get evicted if not tolareted )
+
+# Example
+kubectl taint nodes node1 app=blue:NodeSchedule
+# If the Pod doesnt have toleratiion, it won't get scheduled in this node
+
+# Example
+apiVersion:
+kind: Pod
+metadata:
+    name: myapp-pod
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx
+  tolerations:
+  - key: "app"
+    operator: "Equal"
+    value: "blue"
+    effect: "NoSchedule"
