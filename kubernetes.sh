@@ -39,6 +39,9 @@ kubectl tains nodes node-name key=value:taint-effect(NoSchedule | PreferNoSchedu
 kubectl taint nodes node1 app=blue:NodeSchedule
 # If the Pod doesnt have toleratiion, it won't get scheduled in this node
 
+# Remove taint
+kubectl taint nodes <node-name> key:taint-effect(NoSchedule | PreferNoSchedule | NoExecute)-
+
 # Example
 apiVersion:
 kind: Pod
