@@ -7,8 +7,8 @@ provider "aws" {
 resource "aws_instance" "myec2" {
     ami = "ami-<some_numbers_here>"
     instance_type = var.instancetype
-    # count = 3 -> creates 3 ec2 instance
+    count = 3
     tags = {
-        Name = "security-team"
+        Name = "security-team-${count.index}" # count indexing
     }
 }
